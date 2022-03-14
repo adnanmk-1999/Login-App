@@ -13,7 +13,7 @@ function LoginScreen({navigation}) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const {login, googlelogin} = useContext(AuthContext);
+  const {login, googlelogin, fblogin} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -49,7 +49,7 @@ function LoginScreen({navigation}) {
         btnType="facebook"
         color="#4867aa"
         backgroundColor="#e6eaf4"
-        onPress={() => alert('Facebook')}
+        onPress={() => fblogin()}
       />
       <SocialButton
         buttonTitle="Sign In with Google"

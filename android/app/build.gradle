@@ -195,6 +195,8 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
+
     implementation project(':react-native-vector-icons')
 
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
