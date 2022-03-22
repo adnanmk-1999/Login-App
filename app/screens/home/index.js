@@ -21,6 +21,11 @@ function HomeScreen({navigation}) {
         onPress={() => navigation.navigate('StarWars')}>
         <Text style={styles.buttonText}>StarWars Planets</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('WebView')}>
+        <Text style={styles.buttonText}>WebView</Text>
+      </TouchableOpacity>
       <FormButton buttonTitle="Log Out" onPress={() => logout()} />
     </View>
   );

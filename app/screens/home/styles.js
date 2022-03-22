@@ -13,8 +13,10 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     backgroundColor: '#4287f5',
+    width: 150,
   },
   buttonText:{
-    color: 'white'
+    color: 'white',
+    alignSelf:'center'
   }
 });

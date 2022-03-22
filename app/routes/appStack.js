@@ -5,6 +5,7 @@ import styles from './styles';
 
 import HomeScreen from '../screens/home';
 import Planets from "../screens/starWars/index";
+import WebView from '../screens/webView/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,11 @@ function AppStack() {
         name="StarWars"
         component={Planets}
         options={{title: 'StarWars Planets'}}
+      />
+      <Stack.Screen
+        name="WebView"
+        component={WebView}
+        options={{title: 'Web View'}}
       />
     </Stack.Navigator>
   );
