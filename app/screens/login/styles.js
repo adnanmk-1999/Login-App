@@ -1,8 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  keyboard: {
+    flex: 1,
+  },
   container: {
-    flex:1,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,

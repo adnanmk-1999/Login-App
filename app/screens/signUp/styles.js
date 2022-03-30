@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  keyboard: {
+    flex: 1
+  },
   container: {
     backgroundColor: '#f9fafd',
     flex: 1,
