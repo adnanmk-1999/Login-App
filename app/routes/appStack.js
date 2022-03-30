@@ -1,15 +1,22 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
+import {View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import styles from './styles';
 
+import {AuthContext} from '../authentication/authProvider';
+
 import HomeScreen from '../screens/home';
-import Planets from "../screens/starWars/index";
+import Planets from '../screens/starWars/index';
 import WebView from '../screens/webView/index';
 
 const Stack = createNativeStackNavigator();
 
 function AppStack() {
+
+  const {URL} = useContext(AuthContext);
+
   return (
     <Stack.Navigator screenOptions={styles.stackNavigator}>
       <Stack.Screen
@@ -25,7 +32,22 @@ function AppStack() {
       <Stack.Screen
         name="WebView"
         component={WebView}
-        options={{title: 'Web View'}}
+        options={({navigation}) => ({
+          title: 'Web View',
+          headerLeft: () => (
+            <View>
+              {URL === 'https://www.ust.com/en/careers' && (
+                <FontAwesome
+                  name="long-arrow-left"
+                  size={25}
+                  backgroundColor="#f9fafd"
+                  color="#333"
+                  onPress={() => navigation.navigate('Home')}
+                />
+              )}
+            </View>
+          ),
+        })}
       />
     </Stack.Navigator>
   );
