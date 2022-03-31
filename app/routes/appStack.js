@@ -14,7 +14,6 @@ import WebView from '../screens/webView/index';
 const Stack = createNativeStackNavigator();
 
 function AppStack() {
-
   const {URL} = useContext(AuthContext);
 
   return (
@@ -27,7 +26,31 @@ function AppStack() {
       <Stack.Screen
         name="StarWars"
         component={Planets}
-        options={{title: 'StarWars Planets'}}
+        options={({navigation}) => ({
+          title: 'StarWars Planets',
+          headerLeft: () => (
+            <View>
+              <FontAwesome
+                name="long-arrow-left"
+                size={25}
+                backgroundColor="#f9fafd"
+                color="#333"
+                onPress={() => navigation.navigate('Home')}
+              />
+            </View>
+          ),
+          headerRight: () => (
+            <View>
+              <FontAwesome
+                name="navicon"
+                size={25}
+                backgroundColor="#f9fafd"
+                color="#333"
+                onPress={() => alert('Menu')}
+              />
+            </View>
+          ),
+        })}
       />
       <Stack.Screen
         name="WebView"
@@ -45,6 +68,17 @@ function AppStack() {
                   onPress={() => navigation.navigate('Home')}
                 />
               )}
+            </View>
+          ),
+          headerRight: () => (
+            <View>
+              <FontAwesome
+                name="navicon"
+                size={25}
+                backgroundColor="#f9fafd"
+                color="#333"
+                onPress={() => alert('Menu')}
+              />
             </View>
           ),
         })}
